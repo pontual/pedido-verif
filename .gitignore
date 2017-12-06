@@ -1,0 +1,18 @@
+# Emacs
+
+*~
+\#*\#
+
+# raw data
+
+data/*.csv
+data/*.xls
+data/*.ods
+data/*.js
+data/pedido*
+data/strings*
+
+# BrOffice
+
+.~lock*
+

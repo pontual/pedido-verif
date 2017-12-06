@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('Ubuntu-Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+.ubuntu {
+    font-family: 'Ubuntu';
+    font-size: 16px;
+}
+
+.winFont {
+    font-family: 'Tahoma';
+    font-size: 14px;
+}
