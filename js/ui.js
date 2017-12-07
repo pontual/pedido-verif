@@ -252,6 +252,7 @@ populateName();
 
 function resetTable() {
   document.getElementById("autoParse").value = "Selecione um cliente";
+  document.getElementById("autoParseCalc").value = "";
   
   rows.forEach(function(row) {
     row.q.value = "";
