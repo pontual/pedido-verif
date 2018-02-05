@@ -5,6 +5,10 @@
         <title>Pedido Verif</title>
         <link rel="stylesheet" href="css/fonts.css">
         <style>
+         body {
+             text-align: right;
+         }
+         
          .priceCheckDescLabel {
              text-align: right;
              padding-right: 10px;
@@ -57,8 +61,12 @@
              padding: 5px 0 5px 10px;
          }
 
-         .floatLeft {
-             float: left;
+         .floatRight {
+             float: right;
+         }
+
+         .clear {
+             clear: both;
          }
          
         </style>
@@ -116,14 +124,15 @@
             <option value="0">Select a CNPJ</option>
         </select>
 
-        <br>
+        <!--
         <input type="button" onclick="goToParse();" value="Parse">
+        -->
         <br><br>
         
         CNPJ <span id="cnpj"></span>
 
-        
-        <table class="withBorder">
+        <br>
+        <table class="withBorder floatRight">
             <tr>
                 <td>&nbsp;</td>
                 <td class="right" id="data"></td>
@@ -140,10 +149,14 @@
             </tr>
         </table>
 
+
+        <div class="clear"></div>
+
         Obs <span id="obs" class="red"></span>
         <br>
+        
         <input type="button" value="Reset" onclick="resetTable();">
-        <table>
+        <table class="floatRight">
             <tr>
                 <th>Quant</th>
                 <th>Un</th>
@@ -228,6 +241,8 @@
 
         </table>
 
+        <div class="clear"></div>
+
         Hora
         <input type="radio" id="diaTardeDia" name="diaTarde" value="dia" onclick="updateEmailMsg();" checked> Dia
         <input type="radio" id="diaTardeTarde" name="diaTarde" value="tarde" onclick="updateEmailMsg();"> Tarde
@@ -250,8 +265,8 @@
         
         <br>
         Auto parse<br>
-        <div class="floatLeft">
-            <textarea rows="10" cols="40" id="autoParse" class="winFont">Selecione um cliente</textarea>
+        <div class="floatRight">
+            <textarea rows="10" cols="30" id="autoParse" class="winFont">Selecione um cliente</textarea>
             <br>
             <input type="button" value="Parse" id="parse">
             <input type="button" value="Select" id="selectParse">
@@ -260,8 +275,8 @@
                     
         </div>
 
-        <div class="floatLeft">
-            <textarea rows="10" cols="40" id="autoParseCalc" class="winFont"></textarea>
+        <div class="floatRight">
+            <textarea rows="10" cols="20" id="autoParseCalc" class="winFont"></textarea>
             
         </div>
 

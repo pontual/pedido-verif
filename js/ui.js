@@ -346,7 +346,7 @@ function parseLine(s) {
         descPrecoStr = descPrecoStr.slice(0, -1);
       }
     }
-    return codigo + " - R$ " + descPrecoStr;
+    return codigo + " - R$ " + descPrecoStr + " - ";
   } else {
     return "Selecione cliente - " + s;
   }
@@ -394,7 +394,7 @@ parseButton.onclick = function() {
     output += parseLine(lines[i]) + "\n";
     outputCalc += parseLineCalc(lines[i]) + "\n";
   }
-  parseText.value = output;
+  parseText.value = output.trim() + " ";
   parseTextCalc.value = outputCalc;
 };
   
