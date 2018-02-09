@@ -386,7 +386,7 @@ var parseText = document.getElementById('autoParse');
 var parseTextCalc = document.getElementById('autoParseCalc');
 
 parseButton.onclick = function() {
-  var text = parseText.value;
+  var text = parseText.value.trim();
   var lines = text.split('\n');
   var output = "";
   var outputCalc = "";
@@ -397,7 +397,46 @@ parseButton.onclick = function() {
   parseText.value = output.trim() + " ";
   parseTextCalc.value = outputCalc;
 };
-  
+
+function getColors(inputCodigo) {
+  var result = [];
+  var codigos = Object.keys(produtos);
+  codigos.sort(function(a, b) { return a > b ? 1 : -1; });
+  codigos.forEach(function(codigo) {
+    if (codigo.substring(0, 6) == inputCodigo) {
+      result.push(codigo);
+    }
+  });
+  return result;
+}
+
+var parseColorsButton = document.getElementById('parseColors');
+
+parseColorsButton.onclick = function() {
+  var text = parseText.value.trim();
+  var lines = text.split('\n');
+  var pat = new RegExp('(\\d{6}[A-Za-z]{0,2})');
+  var output = "";
+  var outputCalc = "";
+
+  lines.forEach(function(line) {
+    var match = line.match(pat);
+    if (match) {
+      var codigo = match[0].toUpperCase();
+      var colors = getColors(codigo);
+      colors.forEach(function(color) {
+        output += parseLine(color) + "\n";
+        outputCalc += parseLineCalc(color) + "\n"; 
+      });
+    } else {
+      output += codigo + " - Código não encontrado\n";
+      outputCalc += codigo + " - Código não encontrado\n";
+    }
+  });
+  parseText.value = output.trim() + " ";
+  parseTextCalc.value = outputCalc; 
+};
+
 document.getElementById("selectParse").onclick = function() {
   document.getElementById("autoParse").select();
 }
