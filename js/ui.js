@@ -314,8 +314,12 @@ var lastUpdatedSpan = document.getElementById("lastUpdated");
 lastUpdatedSpan.innerText = lastUpdated;
 
 function getFirstNWords(s, n) {
-    let words = s.split(" ");
-    return words.slice(0, n).join(" ");
+  let words = s.split(" ");
+  return words.slice(0, n).join(" ");
+}
+
+function stripNumbers(s) {
+  return s.replace(/[0-9]/g, '');
 }
 
 function parseLine(s) {
@@ -352,7 +356,7 @@ function parseLine(s) {
       }
     }
     return codigo + " - " +
-      getFirstNWords(produtos[codigo].nome.toLowerCase(), 5) +
+      getFirstNWords(stripNumbers(produtos[codigo].nome.toLowerCase()), 5) +
       " - R$ " + descPrecoStr + " - ";
   } else {
     return "Selecione cliente - " + s;
