@@ -313,6 +313,11 @@ updateEmailMsg();
 var lastUpdatedSpan = document.getElementById("lastUpdated");
 lastUpdatedSpan.innerText = lastUpdated;
 
+function getFirstNWords(s, n) {
+    let words = s.split(" ");
+    return words.slice(0, n).join(" ");
+}
+
 function parseLine(s) {
   // given a line like "10 pcs 143143A", return "143143A - discounted price"
   if (s.trim() == "") {
@@ -346,7 +351,9 @@ function parseLine(s) {
         descPrecoStr = descPrecoStr.slice(0, -1);
       }
     }
-    return codigo + " - R$ " + descPrecoStr + " - ";
+    return codigo + " - " +
+      getFirstNWords(produtos[codigo].nome.toLowerCase(), 5) +
+      " - R$ " + descPrecoStr + " - ";
   } else {
     return "Selecione cliente - " + s;
   }
