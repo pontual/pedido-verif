@@ -335,13 +335,14 @@ function parseLine(s) {
     var match = s.match(pat);
     if (match) {
       var codigo = match[0].toUpperCase();
-    } else {
-      return s + " - sem código";
-    }
+    } // else {
+      // return s + " - sem código";
+    // }
     
     var produto = produtos[codigo];
     if (!produto) {
-      return codigo + " - codigo não existe";
+      // return codigo + " - codigo não existe";
+      return "";
     }
     var preco = produtos[codigo].preco;
     var descPreco4 = (cliPriceFactor * preco).toFixed(4);
@@ -376,13 +377,14 @@ function parseLineCalc(s) {
     var match = s.match(pat);
     if (match) {
       var codigo = match[0].toUpperCase();
-    } else {
-      return s + " - sem código";
-    }
+    } // else {
+      // return s + " - sem código";
+    // }
     
     var produto = produtos[codigo];
     if (!produto) {
-      return codigo + " - codigo não existe";
+      // return codigo + " - codigo não existe";
+      return "";
     }
     var preco = produtos[codigo].preco;
     var preco2 = parseFloat(preco).toFixed(2)
@@ -439,10 +441,10 @@ parseColorsButton.onclick = function() {
         output += parseLine(color) + "\n";
         outputCalc += parseLineCalc(color) + "\n"; 
       });
-    } else {
-      output += codigo + " - Código não encontrado\n";
-      outputCalc += codigo + " - Código não encontrado\n";
-    }
+    } // else {
+     //  output += codigo + " - Código não encontrado\n";
+     // outputCalc += codigo + " - Código não encontrado\n";
+    // }
   });
   parseText.value = output.trim() + " ";
   parseTextCalc.value = outputCalc; 
