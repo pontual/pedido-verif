@@ -404,8 +404,11 @@ parseButton.onclick = function() {
   var output = "";
   var outputCalc = "";
   for (var i = 0; i < lines.length; i++) {
-    output += parseLine(lines[i]) + "\n";
-    outputCalc += parseLineCalc(lines[i]) + "\n";
+    var pl = parseLine(lines[i]);
+    if (pl != "") {
+      output += pl + "\n";
+      outputCalc += parseLineCalc(lines[i]) + "\n";
+    }
   }
   parseText.value = output.trim() + " ";
   parseTextCalc.value = outputCalc;
