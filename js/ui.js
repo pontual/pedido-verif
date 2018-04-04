@@ -453,8 +453,11 @@ parseColorsButton.onclick = function() {
   parseTextCalc.value = outputCalc; 
 };
 
-document.getElementById("selectParse").onclick = function() {
+document.getElementById("cutToClipboard").onclick = function() {
   document.getElementById("autoParse").select();
+  document.execCommand("copy");
+  document.getElementById('resetAllButton').click();
+  goToTop();
 }
 
 document.getElementById("clearParse").onclick = function() {
