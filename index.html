@@ -244,14 +244,24 @@
         <div class="clear"></div>
 
         Hora
-        <input type="radio" id="diaTardeDia" name="diaTarde" value="dia" onclick="updateEmailMsg();" checked> Dia
-        <input type="radio" id="diaTardeTarde" name="diaTarde" value="tarde" onclick="updateEmailMsg();"> Tarde
+        <label>
+            <input type="radio" id="diaTardeDia" name="diaTarde" value="dia" onclick="updateEmailMsg();" checked> Dia
+        </label>
+
+        <label>
+            <input type="radio" id="diaTardeTarde" name="diaTarde" value="tarde" onclick="updateEmailMsg();"> Tarde
+        </label>
 
         , Transport
-        <input type="radio" id="cliRetCli" name="cliRet" value="cli" onclick="updateEmailMsg();" checked>cli retira
-        <input type="radio" id="cliRetEnt" name="cliRet" value="ent" onclick="updateEmailMsg();">entrega
+        <label>
+            <input type="radio" id="cliRetCli" name="cliRet" value="cli" onclick="updateEmailMsg();" checked>cli retira
+        </label>
 
-        <input type="button" value="Select" onclick="selectMsg();">
+        <label>
+            <input type="radio" id="cliRetEnt" name="cliRet" value="ent" onclick="updateEmailMsg();">entrega
+        </label>
+
+        <input type="button" value="Copy" onclick="selectMsg();">
         
         <br>
         <textarea rows="3" cols="62" id="emailMsg"></textarea>
@@ -260,7 +270,8 @@
         <input type="button" onclick="goToTop();" value="Return to top">
         <br><br>
         
-        Cliente: <span id="clienteRepeat" class="highlight"></span><span id="descRepeat2" class="highlight"></span>
+        Cliente: <span id="clienteRepeat" class="highlight"></span><br>
+        <span id="condRepeat"></span>
 
         
         <br>

@@ -50,10 +50,11 @@ var data = document.getElementById("data");
 var razaoSoc = document.getElementById("razaoSoc");
 var codCliRepeat = document.getElementById("codCliRepeat");
 var cond = document.getElementById("cond");
+var condRepeat = document.getElementById("condRepeat");
 var vendd = document.getElementById("vendd");
 var obs = document.getElementById("obs");
 var descRepeat = document.getElementById("descRepeat");
-var descRepeat2 = document.getElementById("descRepeat2");
+//var descRepeat2 = document.getElementById("descRepeat2");
 var total = document.getElementById("total");
 
 function clearCliData() {
@@ -62,9 +63,10 @@ function clearCliData() {
   razaoSoc.innerText = "";
   codCliRepeat.innerText = "";
   cond.innerText = "";
+  condRepeat.innerText = "";
   vendd.innerText = "";
   descRepeat.innerText = "";
-  descRepeat2.innerText = "";
+//  descRepeat2.innerText = "";
   obs.innerText = "";
 }
 
@@ -145,11 +147,12 @@ function processPedido() {
     razaoSoc.innerText = cliente.nome;
     codCliRepeat.innerText = codCli.value;
     cond.innerText = cliente.prazo + " " + " -" + cliente.desconto + "%";
+    condRepeat.innerText = cliente.prazo + " " + " -" + cliente.desconto + "%";
     vendd.innerText = cliente.vendedor;
     obs.innerText = cliente.obs;
 
     descRepeat.innerText = "-" + cliente.desconto + "%";
-    descRepeat2.innerText = "(" + cliente.desconto + "%)";
+//    descRepeat2.innerText = "(" + cliente.desconto + "%)";
     var cliPriceFactor = 3.0 * (1 - (cliente.desconto / 100));
     var grandTotal = 0.0;
 
@@ -304,6 +307,7 @@ function updateEmailMsg() {
 
 function selectMsg() {
   emailMsg.select();
+  document.execCommand("copy");
 }
 
 updateEmailMsg();
