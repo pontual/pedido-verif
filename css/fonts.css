@@ -4,6 +4,12 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url("RobotoCondensed-Regular.ttf") format('truetype');
+    font-style: normal;
+}
+
 .ubuntu {
     font-family: 'Ubuntu';
     font-size: 16px;
@@ -11,5 +17,10 @@
 
 .winFont {
     font-family: 'Tahoma';
+    font-size: 14px;
+}
+
+.roboto {
+    font-family: "Roboto";
     font-size: 14px;
 }
