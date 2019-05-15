@@ -17,7 +17,7 @@ Ctrl+A, Alt+D, C, Coluna A
 
 Copy up to Column I
 
-Save in separate file as CSV, produtos.csv
+Save in separate file as CSV, lista.csv, insert it into strings.js
 
 Codigo,????,Nome,,,                            Unidade,,Estoque,Preco
 63992,"**","CJTO. VELA PALITO P/ ANIVERSARIO C/ 48",,,"BX",,161,"4,8"
