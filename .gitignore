@@ -11,8 +11,10 @@ data/*.ods
 data/*.js
 data/pedido*
 data/strings*
+data/cliente*
+
+tabelas/
 
 # BrOffice
 
 .~lock*
-

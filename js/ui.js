@@ -319,7 +319,8 @@ lastUpdatedSpan.innerText = lastUpdated;
 
 function getFirstNWords(s, n) {
   let words = s.split(" ");
-  return words.slice(0, n).join(" ");
+  let firstwords = words.slice(0, n).join(" ");
+  return firstwords.replace(" c/", "");
 }
 
 function stripNumbers(s) {
@@ -362,7 +363,7 @@ function parseLine(s) {
     }
     return codigo + " - " +
       getFirstNWords(stripNumbers(produtos[codigo].nome.toLowerCase()), 5) +
-      " - R$ " + descPrecoStr + " - ";
+      " - R$ " + descPrecoStr;
   } else {
     return "Selecione cliente - " + s;
   }
@@ -392,7 +393,7 @@ function parseLineCalc(s) {
     }
     var preco = produtos[codigo].preco;
     var preco2 = parseFloat(preco).toFixed(2)
-    return codigo + " - " + cliDesc + "% " + preco2;
+    return codigo + " (" + cliDesc + "%) " + preco2;
   } else {
     return "Selecione cliente - " + s;
   }
@@ -405,7 +406,7 @@ var parseTextCalc = document.getElementById('autoParseCalc');
 parseButton.onclick = function() {
   var text = parseText.value.trim();
   var lines = text.split('\n');
-  var output = "";
+  var output = "Valores unitários\n\n";
   var outputCalc = "";
   for (var i = 0; i < lines.length; i++) {
     var pl = parseLine(lines[i]);
@@ -436,7 +437,7 @@ parseColorsButton.onclick = function() {
   var text = parseText.value.trim();
   var lines = text.split('\n');
   var pat = new RegExp('(\\d{6}[A-Za-z]{0,2})');
-  var output = "";
+  var output = "Valores unitários\n\n";
   var outputCalc = "";
 
   lines.forEach(function(line) {
